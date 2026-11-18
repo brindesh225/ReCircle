@@ -1,0 +1,19 @@
+services:
+  - type: web
+    name: recircle
+    runtime: python
+    plan: free
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn app:app
+    healthCheckPath: /
+    envVars:
+      - key: SECRET_KEY
+        generateValue: true
+      - key: ADMIN_NAME
+        value: ReCircle Admin
+      - key: ADMIN_EMAIL
+        value: admin@recircle.local
+      - key: ADMIN_PASSWORD
+        sync: false
+      - key: SEED_DEMO
+        value: "true"

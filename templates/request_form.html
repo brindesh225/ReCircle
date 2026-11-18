@@ -1,0 +1,9 @@
+{% extends "base.html" %}{% block title %}Request a pickup{% endblock %}{% block content %}
+<div class="narrow"><a class="back" href="{{ url_for('household') }}">← Back to dashboard</a><div class="page-head"><div><span class="eyebrow">NEW COLLECTION REQUEST</span><h1>Schedule a pickup</h1><p>Tell us what you need collected. Your NGO will coordinate the next step.</p></div></div><form method="post" class="panel form-grid">
+<label>Waste category<select name="category" required><option value="">Choose category</option>{% for c in categories %}<option>{{ c }}</option>{% endfor %}</select></label>
+<label>Estimated quantity (kg)<input type="number" name="quantity" min="0.1" max="10000" step="0.1" placeholder="e.g. 4.5" required></label>
+<label class="wide">Pickup address<textarea name="address" rows="3" required>{{ address }}</textarea></label>
+<label>Preferred pickup date<input type="date" name="date" min="{{ today }}" required></label>
+<label>Preferred time slot<select name="slot" required><option value="">Choose a time</option>{% for s in ['8 AM – 11 AM','11 AM – 2 PM','2 PM – 5 PM'] %}<option>{{ s }}</option>{% endfor %}</select></label>
+<label class="wide">Additional instructions <small class="muted">(optional)</small><textarea name="instructions" rows="3" placeholder="Landmark, access instructions, or other details"></textarea></label>
+<div class="wide form-actions"><button class="btn btn-primary">Submit pickup request →</button><a class="btn btn-light" href="{{ url_for('household') }}">Cancel</a></div></form></div>{% endblock %}
