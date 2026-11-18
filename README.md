@@ -1,3 +1,4 @@
+
 # ReCircle – Smart Waste Collection & Recycling Platform
 
 A functional local-first full-stack prototype built with Flask, SQLite, HTML, CSS and vanilla JavaScript. It runs without paid API keys or external services.
@@ -84,3 +85,5 @@ python app.py
 5. Open the `https://...onrender.com` URL shown in the Render dashboard.
 
 **Important:** Render's free web service has an ephemeral filesystem. The SQLite database and uploaded proof images in this demo can be lost when the service restarts or redeploys. Do not use this deployment for real household data. For durable production use, migrate SQLite to a managed PostgreSQL database and store proof images in persistent object storage (or a supported persistent disk), then configure backups, HTTPS, CSRF protection, rate limiting and secure cookie settings. Demo credentials are public in this repository's README, so change all demo passwords and disable demo seeding before public production use.
+=======
+0c33f0475bd105d1443e4def7572d04399dbc424
